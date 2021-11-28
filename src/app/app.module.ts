@@ -8,7 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
@@ -17,7 +17,18 @@ import { FilterProductPipe } from './pipes/filter-product.pipe';
 import { DescriptionPipe } from './pipes/description.pipe';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SignupComponent, HomeComponent, ProductsComponent, CartComponent, WishlistComponent, OrdersComponent, FilterProductPipe, DescriptionPipe],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    SignupComponent,
+    HomeComponent,
+    ProductsComponent,
+    CartComponent,
+    WishlistComponent,
+    OrdersComponent,
+    FilterProductPipe,
+    DescriptionPipe,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,7 +37,8 @@ import { DescriptionPipe } from './pipes/description.pipe';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent],
+  exports: [FilterProductPipe, DescriptionPipe],
 })
 export class AppModule {}

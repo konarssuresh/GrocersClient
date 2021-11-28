@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 import { OrdersComponent } from './orders.component';
 
@@ -8,9 +10,9 @@ describe('OrdersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrdersComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule, AppRoutingModule],
+      declarations: [OrdersComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

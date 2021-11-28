@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   userData: any = {};
   cartItems: any[] = [];
   constructor(
-    private browserStorageUtil: BrowserUtilService,
+    public browserStorageUtil: BrowserUtilService,
     private router: Router,
     private cartService: CartService,
     private orderService: OrderService
