@@ -1,0 +1,108 @@
+<div class="container bg-light signup-container">
+  <h3>Grocers Signup</h3>
+  <form class="form" [formGroup]="signUpForm" (ngSubmit)="handleSignUp()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        formControlName="firstName"
+        class="form-control"
+        placeholder="Enter First name"
+      />
+      <div *ngIf="getControl.firstName.touched && getControl.firstName.invalid">
+        <p *ngIf="getControl.firstName.errors?.required" class="text-danger">
+          this field is required
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        formControlName="lastName"
+        class="form-control"
+        placeholder="enter last name"
+      />
+      <div *ngIf="getControl.lastName.touched && getControl.lastName.invalid">
+        <p *ngIf="getControl.lastName.errors?.required" class="text-danger">
+          this field is required
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Date of Birth</label>
+      <div class="input-group">
+        <input
+          class="form-control"
+          placeholder="yyyy-mm-dd"
+          name="dp"
+          formControlName="dateOfBirth"
+          ngbDatepicker
+          #d="ngbDatepicker"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary calendar"
+            (click)="d.toggle()"
+            type="button"
+          ></button>
+        </div>
+      </div>
+      <div
+        *ngIf="getControl.dateOfBirth.touched && getControl.dateOfBirth.invalid"
+      >
+        <p *ngIf="getControl.dateOfBirth.errors?.required" class="text-danger">
+          this field is required
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">User Id</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter user id"
+        formControlName="userId"
+      />
+      <div *ngIf="getControl.userId.touched && getControl.userId.invalid">
+        <p *ngIf="getControl.userId.errors?.required" class="text-danger">
+          this field is required
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        placeholder="Password"
+      />
+      <div *ngIf="getControl.password.touched && getControl.password.invalid">
+        <p *ngIf="getControl.password.errors?.required" class="text-danger">
+          this field is required
+        </p>
+        <p *ngIf="getControl.password.errors?.pattern" class="text-danger">
+          must contain 8 char atleast with combination of small,capital,special
+          char and numbers
+        </p>
+      </div>
+    </div>
+    <button
+      type="submit"
+      [disabled]="!signUpForm.valid"
+      class="btn btn-primary form-control"
+    >
+      Submit
+    </button>
+    <button type="reset" class="btn btn-danger form-control">Reset</button>
+    <a routerLink="/" class="loginUrl"> Already have an account. Login</a>
+  </form>
+</div>
+
+<p class="text text-danger">{{ errMsg }}</p>

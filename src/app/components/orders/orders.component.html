@@ -1,0 +1,29 @@
+<div class="container order-container bg-light">
+  <h3 class="text-center">Orders</h3>
+  <div class="table-responsive order-table">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">S No.</th>
+          <th scope="col">Order Items</th>
+          <th scope="col">OrderId</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="orders.length === 0" class="text-center">
+          No Orders Placed
+        </tr>
+        <tr *ngFor="let order of orders; let i = index">
+          <td scope="row">{{ i + 1 }}</td>
+          <td>
+            <span *ngFor="let item of order.items">{{ item.name }},</span>
+          </td>
+
+          <td>
+            {{ order.orderId }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

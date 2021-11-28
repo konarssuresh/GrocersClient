@@ -1,0 +1,12 @@
+.image-tile {
+  width: 5rem;
+  height: 5rem;
+}
+
+.cart-container {
+  min-height: 90vh;
+}
+
+.cart-table {
+  border: 1px solid black;
+}

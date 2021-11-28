@@ -1,0 +1,12 @@
+.image-tile {
+  width: 5rem;
+  height: 5rem;
+}
+
+.order-container {
+  min-height: 90vh;
+}
+
+.order-table {
+  border: 1px solid black;
+}

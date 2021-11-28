@@ -1,0 +1,44 @@
+<div class="container cart-container bg-light">
+  <h3 class="text-center">Wishlist</h3>
+  <div class="table-responsive cart-table">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">S No.</th>
+          <th scope="col">Name</th>
+          <th scope="col" class="d-none d-lg-table-cell">image</th>
+          <th scope="col">Price</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of wishlistItems; let i = index">
+          <td scope="row">{{ i + 1 }}</td>
+          <td>
+            {{ item.name }}
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <img
+              src="{{ item.imageUrl }}"
+              class="img-fluid image-tile"
+              alt="{{ item.name }}"
+            />
+          </td>
+
+          <td>
+            {{ item.price }}
+          </td>
+
+          <td>
+            <button class="btn btn-danger" (click)="onRemove(item)">
+              Remove
+            </button>
+            <button class="btn btn-primary" (click)="onAddToCart(item)">
+              Add to cart
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
