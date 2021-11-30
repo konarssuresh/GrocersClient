@@ -36,10 +36,18 @@
           </td>
 
           <td>
-            <button class="btn btn-primary" (click)="onRemove(item)">
+            <button
+              class="btn btn-primary"
+              data-aq="removeButton"
+              (click)="onRemove(item)"
+            >
               Remove
             </button>
-            <button class="btn btn-danger" (click)="onAddMore(item)">
+            <button
+              class="btn btn-danger"
+              data-aq="addButton"
+              (click)="onAddMore(item)"
+            >
               Add
             </button>
           </td>
@@ -47,7 +55,11 @@
       </tbody>
     </table>
     <p *ngIf="cartItems.length > 0" class="text-center">
-      <button class="btn btn-success" (click)="onPlaceOrder()">
+      <button
+        data-aq="placeOrder"
+        class="btn btn-success"
+        (click)="onPlaceOrder()"
+      >
         Place Order
       </button>
     </p>

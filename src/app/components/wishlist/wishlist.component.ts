@@ -10,12 +10,12 @@ import { WishlistService } from 'src/app/services/wishlist.service';
   styleUrls: ['./wishlist.component.css'],
 })
 export class WishlistComponent implements OnInit {
-  private userData: any;
+  public userData: any;
   wishlistItems: any[] = [];
   constructor(
-    private browserStorageUtil: BrowserUtilService,
+    public browserStorageUtil: BrowserUtilService,
     private router: Router,
-    private wishlistService: WishlistService,
+    public wishlistService: WishlistService,
     private cartService: CartService
   ) {}
 

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-
+import { By } from '@angular/platform-browser';
 import { SignupComponent } from './signup.component';
 
 describe('SignupComponent', () => {
@@ -30,5 +30,13 @@ describe('SignupComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should call addUser function on form submit', () => {
+    component.userService.addUser = jasmine.createSpy();
+    let form = fixture.debugElement.query(By.css('form'));
+    form.triggerEventHandler('submit', null);
+    fixture.detectChanges();
+    expect(component.userService.addUser).toHaveBeenCalled();
   });
 });

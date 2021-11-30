@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
   constructor(
     public browserStorageUtil: BrowserUtilService,
     private router: Router,
-    private cartService: CartService,
+    public cartService: CartService,
     private orderService: OrderService
   ) {}
 

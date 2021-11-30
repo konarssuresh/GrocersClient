@@ -12,8 +12,8 @@ export class OrdersComponent implements OnInit {
   userData: any = {};
   orders: any[] = [];
   constructor(
-    private browserStorageUtil: BrowserUtilService,
-    private router: Router,
+    public browserStorageUtil: BrowserUtilService,
+    public router: Router,
     private orderService: OrderService
   ) {}
 

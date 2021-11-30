@@ -20,10 +20,18 @@ describe('ProductsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductsComponent);
     component = fixture.componentInstance;
+    component.browserStorageUtil.localStorageUtil.getEntry = jasmine
+      .createSpy()
+      .and.returnValue({ userId: 'suresh0608' });
+
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should get user data from store and save', () => {
+    expect(component.userData).toEqual({ userId: 'suresh0608' });
   });
 });

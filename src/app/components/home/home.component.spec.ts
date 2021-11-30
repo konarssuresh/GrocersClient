@@ -18,10 +18,17 @@ describe('HomeComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
+    component = fixture.componentInstance;
+    component.browserStorageUtil.localStorageUtil.getEntry = jasmine
+      .createSpy()
+      .and.returnValue({ userId: 'suresh0608' });
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should fetch userData from local storage', () => {
+    expect(component.userData).toEqual({ userId: 'suresh0608' });
   });
 });

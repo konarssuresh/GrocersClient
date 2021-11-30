@@ -18,10 +18,19 @@ describe('OrdersComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(OrdersComponent);
     component = fixture.componentInstance;
+    component = fixture.componentInstance;
+    component.browserStorageUtil.localStorageUtil.getEntry = jasmine
+      .createSpy()
+      .and.returnValue({});
+    component.router.navigateByUrl = jasmine.createSpy();
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should navigate to login page if user is not logged in', () => {
+    expect(component.router.navigateByUrl).toHaveBeenCalledWith('/login');
   });
 });

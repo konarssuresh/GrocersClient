@@ -8,8 +8,9 @@ import { BrowserUtilService } from 'src/app/services/browser-util.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  public userData: any;
   constructor(
-    private browserStorageUtil: BrowserUtilService,
+    public browserStorageUtil: BrowserUtilService,
     private router: Router
   ) {}
 
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
     const userData =
       this.browserStorageUtil.localStorageUtil.getEntry('userData');
     console.log(userData);
+    this.userData = userData;
     if (Object.keys(userData).length === 0) {
       this.router.navigateByUrl('/login');
     }

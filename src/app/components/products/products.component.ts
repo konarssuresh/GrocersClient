@@ -16,11 +16,11 @@ export class ProductsComponent implements OnInit {
     private cartService: CartService,
     private wishlistService: WishlistService,
     private router: Router,
-    private browserStorageUtil: BrowserUtilService
+    public browserStorageUtil: BrowserUtilService
   ) {}
   public Products: any[] = [];
   public filterText: string = '';
-  private userData: any = {};
+  public userData: any = {};
 
   ngOnInit(): void {
     const userData =

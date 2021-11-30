@@ -16,4 +16,10 @@ describe('ProductService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+  it('should call http get req to get products endpoint ', () => {
+    service.url = 'test';
+    service.http.get = jasmine.createSpy();
+    service.getProducts();
+    expect(service.http.get).toHaveBeenCalledWith('test/getItems');
+  });
 });

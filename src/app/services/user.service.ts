@@ -6,8 +6,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private url = 'http://localhost:9090/api/users';
-  constructor(private http: HttpClient) {}
+  public url = 'http://localhost:9090/api/users';
+  constructor(public http: HttpClient) {}
 
   private data = new BehaviorSubject(false);
   isLoggedIn = this.data.asObservable();

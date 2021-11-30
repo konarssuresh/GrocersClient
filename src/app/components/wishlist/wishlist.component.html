@@ -30,7 +30,11 @@
           </td>
 
           <td>
-            <button class="btn btn-danger" (click)="onRemove(item)">
+            <button
+              class="btn btn-danger"
+              data-aq="btnRemove"
+              (click)="onRemove(item)"
+            >
               Remove
             </button>
             <button class="btn btn-primary" (click)="onAddToCart(item)">

@@ -16,7 +16,9 @@
         <tr *ngFor="let order of orders; let i = index">
           <td scope="row">{{ i + 1 }}</td>
           <td>
-            <span *ngFor="let item of order.items">{{ item.name }},</span>
+            <span data-aq="itemName" *ngFor="let item of order.items"
+              >{{ item.name }},</span
+            >
           </td>
 
           <td>
