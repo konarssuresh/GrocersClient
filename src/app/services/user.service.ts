@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  public url = 'http://localhost:9090/api/users';
+  public url = 'http://3.128.201.25:9090/api/users';
   constructor(public http: HttpClient) {}
 
   private data = new BehaviorSubject(false);

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductService {
-  public url = 'http://localhost:9090/api/items';
+  public url = 'http://3.128.201.25:9090/api/items';
   constructor(public http: HttpClient) {}
 
   getProducts = (): Observable<any> => {

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class WishlistService {
-  public url = 'http://localhost:9090/api/wishlists';
+  public url = 'http://3.128.201.25:9090/api/wishlists';
   constructor(public http: HttpClient) {}
 
   addToWishlist = (data: any): Observable<any> => {

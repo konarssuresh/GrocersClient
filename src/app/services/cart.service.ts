@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CartService {
-  public url = 'http://localhost:9090/api/carts';
+  public url = 'http://3.128.201.25:9090/api/carts';
   constructor(public http: HttpClient) {}
 
   addToCart = (data: any): Observable<any> => {
